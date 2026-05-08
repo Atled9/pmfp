@@ -2,7 +2,7 @@
 
 Graph any given function within a portable pixel map (.ppm) image
 
-![.ppm graph example](images_for_README/example.ppm)
+![.ppm graph example](images_for_README/grid.png)
 
 ## How to Use
 
