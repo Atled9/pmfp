@@ -27,7 +27,26 @@ void template(Grid *grid, <optional parameters for function properties>)
 	double x, y;
 	for (int i = 0; i < grid->width; i++) {
 		x = (i - (double)grid->x_origin) / (double)grid->ppu;
-		y = < Your function of x here >
+		y = < Your function of x here >;
+		setcoor(grid, x, y);
+	}
+}
+```
+* If your function can have two separate y values for the same value of x 
+  (e.g. ellipse, hyperbola), you need to run two loops for each set of values.
+  The general form goes as follows:
+```
+void template(Grid *grid, <optional parameters for function properties>)
+{
+	double x, y;
+	for (int i = 0; i < grid->width; i++) {
+		x = (i - (double)grid->x_origin) / (double)grid->ppu;
+		y = < function of x >;
+		setcoor(grid, x, y);
+	}
+	for (int i = 0; i < grid->width; i++) {
+		x = (i - (double)grid->x_origin) / (double)grid->ppu;
+		y = < mirrored function of x  >;
 		setcoor(grid, x, y);
 	}
 }
