@@ -18,3 +18,17 @@ Graph any given function within a portable pixel map (.ppm) image
 * Now your will have your pixelmap image, the default name is "grid.ppm"
 
 ## Build Your Own Function
+
+* You can use the current math functions in `grid.c` as an example
+* The general form of a function in this program goes as follows:
+```
+void template(Grid *grid, <optional parameters for function properties>)
+{
+	double x, y;
+	for (int i = 0; i < grid->width; i++) {
+		x = (i - (double)grid->x_origin) / (double)grid->ppu;
+		y = < Your function of x here >
+		setcoor(grid, x, y);
+	}
+}
+```
